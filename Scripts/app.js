@@ -27,6 +27,15 @@
 
     var paragraphs = [];
 
+    // create a reference for sendButton
+    var sendButton = document.getElementById("sendButton");
+
+    // check to see if sendButton exists
+    if (sendButton) {
+        // event listener
+        sendButton.addEventListener("click", sendButtonClick);
+    }
+
     // data for my pages
 
     // index intro paragraph
