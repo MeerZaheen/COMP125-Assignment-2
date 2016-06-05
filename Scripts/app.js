@@ -36,6 +36,17 @@
         sendButton.addEventListener("click", sendButtonClick);
     }
 
+    // event handler function that shows in console when the send button is clicked
+    function sendButtonClick(event) {
+        console.log("clicked!");
+    }
+
+    // create a reference to the form field
+    var Name = document.getElementById("name");
+    var EmailAddress = document.getElementById("email");
+    var PhoneNumber = document.getElementById("phone");
+    var Message = document.getElementById("message");
+
     // data for my pages
 
     // index intro paragraph
