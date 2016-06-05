@@ -20,7 +20,7 @@
 
     paragraphElements[0] = document.getElementById("paragraphOne")
     paragraphElements[1] = document.getElementById("paragraphTwo")
-    paragraphElements[2] = document.getElementById("paragraphThree")
+    //paragraphElements[2] = document.getElementById("paragraphThree")
     paragraphElements[3] = document.getElementById("paragraphTwo.1")
     paragraphElements[4] = document.getElementById("paragraphTwo.2")
     paragraphElements[5] = document.getElementById("paragraphTwo.3")
@@ -45,9 +45,9 @@
     paragraphs[5] = "These are some of the websites I created using Web Expression 4."
 
     // contact me paragraph
-    paragraphs[2] = " I'm a Civil Engineer graduate from Seneca College, Newnham Campus."
-        + " I worked professionally as a Civil Engineer for 2 years and realized that I would like to pursue a different career." + " I'm currently enrolled in Centennial College as a Software Engineer."
-        + " I enjoy First Person Shooter video games." + " I'm also a PC hardware enthusiast, as I have build my own PC - more information would be found on My Projects page."
+    //paragraphs[2] = " I'm a Civil Engineer graduate from Seneca College, Newnham Campus."
+    //    + " I worked professionally as a Civil Engineer for 2 years and realized that I would like to pursue a different career." + " I'm currently enrolled in Centennial College as a Software Engineer."
+    //    + " I enjoy First Person Shooter video games." + " I'm also a PC hardware enthusiast, as I have build my own PC - more information would be found on My Projects page."
 
     // check to see if paragraph one exists
     var paragraphElementLength = paragraphElements.length;
