@@ -47,6 +47,19 @@
     var PhoneNumber = document.getElementById("phone");
     var Message = document.getElementById("message");
 
+    // create a reference to the form
+    var contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        // event listener with inline anonymous event handler function once you click Send(Submit)
+        contactForm.addEventListener("Submit", function (event) {
+            event.preventDefault();
+            console.log("submitted"); // shows form input in console
+            showFormInput();
+            contactForm.reset();
+        });
+    }
+
     // data for my pages
 
     // index intro paragraph
