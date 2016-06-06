@@ -4,10 +4,10 @@
 * FileName: App.js
 *
 * @author Meer Zaheen Nazmul
-* @date june 2, 2016
+* @date june 5, 2016
 *
 * StudentID: 300522487
-* website: http://comp125-assignment-1.azurewebsites.net
+* website: http://comp125-assignment2.azurewebsites.net/contact.html
 * @description: This file is the main javascript file for the website
 */
 
@@ -16,6 +16,7 @@
 (function () {
     "use strict";
 
+    // <---------------- PARAGRAPHS SECTION ------------>
     var paragraphElements = [];
 
     paragraphElements[0] = document.getElementById("paragraphOne")
@@ -26,6 +27,8 @@
     paragraphElements[5] = document.getElementById("paragraphTwo.3")
 
     var paragraphs = [];
+
+    // <---------------- CONTACT PAGE SECTION ------------>
 
     // create a reference for sendButton
     var sendButton = document.getElementById("sendButton");
@@ -42,17 +45,18 @@
     }
 
     // create a reference to the form field
-    var Name = document.getElementById("name");
-    var EmailAddress = document.getElementById("email");
-    var PhoneNumber = document.getElementById("phone");
-    var Message = document.getElementById("message");
+    var firstName = document.getElementById("firstName");
+    var lastName = document.getElementById("lastName");
+    var email = document.getElementById("email");
+    var contactNumber = document.getElementById("contactNumber");
+    var message = document.getElementById("message");
 
     // create a reference to the form
     var contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
         // event listener with inline anonymous event handler function once you click Send(Submit)
-        contactForm.addEventListener("Submit", function (event) {
+        contactForm.addEventListener("submit", function (event) {
             event.preventDefault();
             console.log("submitted"); // shows form input in console
             showFormInput();
@@ -60,7 +64,31 @@
         });
     }
 
-    // data for my pages
+    /**
+     * This function shows the input from each form field
+     * on the console
+     * 
+     * @method showFormInput
+     * @return {void}
+     */
+    // event handler function
+    function showFormInput() {
+        console.log("++++++++++++++++++++++++++++++++");
+        console.log("First Name: " + firstName.value);
+        console.log("++++++++++++++++++++++++++++++++");
+        console.log("Last Name: " + lastName.value);
+        console.log("++++++++++++++++++++++++++++++++");
+        console.log("Email: " + email.value);
+        console.log("++++++++++++++++++++++++++++++++");
+        console.log("contactNumber: " + contactNumber.value);
+        console.log("++++++++++++++++++++++++++++++++");
+        console.log("message: " + message.value);
+        console.log("++++++++++++++++++++++++++++++++");
+    }
+
+    // <---------------- END CONTACT PAGE SECTION ------------>
+
+    // <---------------- PARAGRAPHS DATA SECTION ------------>
 
     // index intro paragraph
     paragraphs[0] = "I am Meer Zaheen, born on March 12, 1990. I have been living in Toronto, Canada for almost 18 years. I graduated from Seneca College as a Civil Engineer in 2013. Since then, I was employed at an engineering firm called CCI-Group. Formerly I was at a 9 month contract with EXP Inc. I was always passionate about evolving products and disruptive technologies and hence why I chose to continue my education at Centennial College as a Software Engineer. Outside of Engineering and technology, I like to play competitive video games, absorb different cultures and enjoy amazing food. I have always had a passion for sports and personal fitness – not only to lead a healthy lifestyle but to bring out my competitive spirit. I live to serve my talents as an engineer, artist and a fitness enthusiast. I create balance in work, play, and community. Also, I want to be the kind of person my cat already thinks I am."
@@ -82,12 +110,14 @@
     //    + " I worked professionally as a Civil Engineer for 2 years and realized that I would like to pursue a different career." + " I'm currently enrolled in Centennial College as a Software Engineer."
     //    + " I enjoy First Person Shooter video games." + " I'm also a PC hardware enthusiast, as I have build my own PC - more information would be found on My Projects page."
 
+    // <---------------- END PARAGRAPHS DATA SECTION ------------>
+
     // check to see if paragraph one exists
     var paragraphElementLength = paragraphElements.length;
 
     // if paragraph exists then populate each paragraph on the page
 
-    for (var index = 0; index < paragraphElements.length; index++) {
+    for (var index = paragraphElementLength; index >= 0; index--) {
         if (paragraphElements[index]) {
             paragraphElements[index].innerHTML = paragraphs[index];
         }

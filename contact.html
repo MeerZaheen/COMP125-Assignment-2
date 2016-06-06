@@ -83,8 +83,7 @@
             </div>
         </div>
     </header>
-
-
+    
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -98,41 +97,47 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
+                    <form id="contactForm" action="" method="" role="form">
+                        <div class="form-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" placeholder="Enter First Name" id="firstName" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-                        <div class="row control-group">
+                        <div class="form-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>EmailAddress</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Last Name" id="lastName" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-                        <div class="row control-group">
+                        <div class="form-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>PhoneNumber</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" placeholder="Enter Email" id="email" required>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-                        <div class="row control-group">
+                        <div class="form-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <label for="contactNumber">Contact Number</label>
+                                <input type="tel" class="form-control" placeholder="Enter Contact Number" id="contactNumber" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="message">Message</label>
+                                <textarea rows="5" class="form-control" placeholder="Enter Message Here..." id="message" required></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <br>
-                        <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <a id="sendButton" href="index.html" class="btn btn-primary">Submit</a>
-                                <a id="cancelButton" href="#" class="btn btn-warning">Cancel</a>
+                                <button id="sendButton" class="btn btn-primary">Send</button>
+                                <a id="cancelButton" href="index.html" class="btn btn-warning">Cancel</a>
                             </div>
                     </form>
                     </div>
@@ -200,13 +205,12 @@
 
     <!-- Contact Form JavaScript -->
     <script src="Scripts\js\jqBootstrapValidation.js"></script>
-    <script src="Scripts\js\contact_me.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="Scripts\js\freelancer.js"></script>
-        
-    <!-- Text JavaScript -->
-    <script src="Scripts/app.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="Scripts\app.js"></script>
 
 </body>
 
