@@ -88,42 +88,42 @@
         console.log("++++++++++++++++++++++++++++++++");
     }
 
-      function readParagraphData() {
-    // data loaded                everything is ok
-    if ((xhrParagraphContents.readyState === 4) && (xhrParagraphContents.status === 200)) {
+    function readParagraphData() {
+        // data loaded                everything is ok
+        if ((xhrParagraphContents.readyState === 4) && (xhrParagraphContents.status === 200)) {
 
-      var paragraphContents = JSON.parse(xhrParagraphContents.responseText);
-      var contents = paragraphContents.paragraphs;
+            var ParagraphContents = JSON.parse(xhrParagraphContents.responseText);
+            var contents = paragraphContents.paragraphs;
 
-      contents.forEach(function (pContents) {
-        var index = pContents["id"];
-        var parContent = pContents["content"];
-        console.log(index + " ==> " + parContent);
-        if (documentElements[index]) {
-          documentElements[index].innerHTML = parContent;
+            contents.forEach(function (pContents) {
+                var index = pContents["id"];
+                var parContent = pContents["content"];
+                console.log(index + " ==> " + parContent);
+                if (documentElements[index]) {
+                    documentElements[index].innerHTML = parContent;
+                }
+            }, this);
+
         }
-      }, this);
+    }
+    /*   
+     * This function is to handle the windows load event on which the
+     * paragraph details will be requested from json file using AJAX call and then process
+     * the resoponse to use paragraph details.
+     * 
+     * @function init
+     * @returns {void}
+     */
+    function init() {
+
+        xhrParagraphContents = new XMLHttpRequest(); // step 1 - create xhr object
+        xhrParagraphContents.open("GET", "Scripts/paragraphs.json", true); // step 2 - open request
+        xhrParagraphContents.send(null); // step 3 - send request
+        xhrParagraphContents.addEventListener("readystatechange", readParagraphData); // step 4
 
     }
-}
-  /*   
-   * This function is to handle the windows load event on which the
-   * paragraph details will be requested from json file using AJAX call and then process
-   * the resoponse to use paragraph details.
-   * 
-   * @function init
-   * @returns {void}
-   */
-  function init() {
 
-    xhrParagraphContents = new XMLHttpRequest(); // step 1 - create xhr object
-    xhrParagraphContents.open("GET", "Scripts/paragraphs.json", true); // step 2 - open request
-    xhrParagraphContents.send(null); // step 3 - send request
-    xhrParagraphContents.addEventListener("readystatechange", readParagraphData); // step 4
-    
-  }
-
-  // add windows load event handler
+    // add windows load event handler
     //window.addEventListener("load", init);
 
     // <---------------- END CONTACT PAGE SECTION ------------>
@@ -153,14 +153,14 @@
     // <---------------- END PARAGRAPHS DATA SECTION ------------>
 
     // check to see if paragraph one exists
-    var paragraphElementLength = paragraphElements.length;
+    //var paragraphElementLength = paragraphElements.length;
 
     // if paragraph exists then populate each paragraph on the page
 
-    for (var index = paragraphElementLength; index >= 0; index--) {
-        if (paragraphElements[index]) {
-            paragraphElements[index].innerHTML = paragraphs[index];
-        }
-    }
+    //for (var index = paragraphElementLength; index >= 0; index--) {
+    //   if (paragraphElements[index]) {
+    //       paragraphElements[index].innerHTML = paragraphs[index];
+    //   }
+    //}
     window.addEventListener("load", init);
 })();
